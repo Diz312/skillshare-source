@@ -183,9 +183,9 @@
     "toolkit-scout": {
       "source": "/Users/diz312/myCode/agent-toolkit/local-skills/toolkit-scout",
       "type": "local",
-      "installed_at": "2026-11-14T12:12:48.007294-06:00",
+      "installed_at": "2026-11-14T12:13:39.943494-06:00",
       "file_hashes": {
-        "SKILL.md": "sha256:24326dc29e4fda54a957fa7ba1494c2e48b30afd129ed5b50c662963c2b1220e",
+        "SKILL.md": "sha256:38bdba74afa973d32af905bc4ff2dee9d86315c7d124d3f2116d155906585034",
         "assets/page.html": "sha256:a90bfa526a6a0339a363205806e8f4a2f2dd675651627a9aaa21494bff2a67f9",
         "references/sources.md": "sha256:42b150b7306504963142eed0e7d148d71b6183008479c8947b183a9973035b47",
         "scripts/build_page.py": "sha256:9f7ebcd985aa6cd237972918556a1198b8678132c40afbb7607cc6076d899d94"

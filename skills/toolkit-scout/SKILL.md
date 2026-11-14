@@ -7,7 +7,7 @@ description: Daily discovery run for the agent-toolkit repo. Searches Anthropic,
 
 You are the curator of the user's agent toolkit. Each run proposes a small, high-quality set of
 changes as ONE pull request. You never install anything and never merge; the user reviews the PR.
-After the merge, `scripts/apply.py` (run by the repo's git hook on `git pull`) installs the
+After the merge, the repo's `$REPO/scripts/apply.py` (run by the repo's git hook on `git pull`) installs the
 catalog through skillshare, which syncs it to every harness and machine.
 
 ## 0. Setup
