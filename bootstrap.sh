@@ -27,8 +27,10 @@ else
 fi
 
 # MCP servers live in the committed mcp.yaml; config.yaml is per machine.
-grep -q '^  mcp: ./mcp.yaml' "$CFG" || sed -i.bak 's|^sources:$|sources:\
-  mcp: ./mcp.yaml|' "$CFG"
+if ! grep -q '^  mcp: ./mcp.yaml' "$CFG"; then
+  sed -i.bak 's|^sources:$|sources:\
+  mcp: ./mcp.yaml|' "$CFG" && rm -f "$CFG.bak"
+fi
 if ! grep -q '^mcp:' "$CFG"; then
   clients=""
   [ -d "$HOME/.claude" ] && clients="$clients claude"
