@@ -10,6 +10,13 @@ CFG="$HOME/.config/skillshare/config.yaml"
 
 command -v skillshare >/dev/null || brew install skillshare
 
+# The repo is private: git must be able to read it before init, or init links an empty source.
+if ! GIT_TERMINAL_PROMPT=0 git ls-remote -q "$REMOTE" >/dev/null 2>&1; then
+  echo "Cannot read $REMOTE. Sign git in to GitHub first:" >&2
+  echo "  gh auth login && gh auth setup-git" >&2
+  exit 1
+fi
+
 if [ ! -f "$CFG" ]; then
   # Connects the existing repo: pulls skills, agents and mcp.yaml; detects installed tools.
   skillshare init --remote "$REMOTE" --git-root root --all-targets --mode merge --no-skill --no-tui
