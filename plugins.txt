@@ -1,0 +1,4 @@
+# Claude Code plugins for every machine: <name> <plugin@marketplace> <marketplace repo>.
+# Written by agent-toolkit's scripts/apply.py (catalog/plugins.yaml); read by bootstrap.sh.
+pyright-lsp pyright-lsp@claude-plugins-official anthropics/claude-plugins-official
+typescript-lsp typescript-lsp@claude-plugins-official anthropics/claude-plugins-official
