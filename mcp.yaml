@@ -2,16 +2,27 @@
 # receiving clients in its own config.yaml (mcp.targets). Pin exact versions; secrets only as
 # fromEnv references (values live in ~/.secrets/agent.env on each machine).
 servers:
-  rea:
-    command: npx
-    args: [-y, rea-agents@6.9.0, mcp]
-  gitnexus:
-    command: npx
-    args: [-y, gitnexus@1.6.12, mcp]
   context7:
     url: https://mcp.context7.com/mcp
-    bearerToken: {fromEnv: CONTEXT7_API_KEY}
-    # Antigravity cannot take secret headers; exclude it on machines that have it.
+    bearerToken:
+      fromEnv: CONTEXT7_API_KEY
+  gitnexus:
+    command: npx
+    args:
+      - -y
+      - gitnexus@1.6.12
+      - mcp
   playwright:
     command: npx
-    args: [-y, "@playwright/mcp@0.0.85"]
+    args:
+      - -y
+      - '@playwright/mcp@0.0.85'
+  rea:
+    command: npx
+    args:
+      - -y
+      - rea-agents@6.8.0
+      - mcp
+    targets:
+      - claude
+      - cursor
